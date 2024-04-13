@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".resultActivity">
+
+    <ImageView
+        android:id="@+id/back_btn"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+
+        android:src="@drawable/baseline_arrow_back_ios_new_24"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="25dp"
+
+        />
+
+    <TextView
+        android:id="@+id/header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Calculation Result"
+        app:layout_constraintTop_toTopOf="@id/back_btn"
+        app:layout_constraintBottom_toBottomOf="@id/back_btn"
+        app:layout_constraintStart_toEndOf="@id/back_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        />
+
+    <TextView
+        android:id="@+id/bmiScoreHead"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BMI Score"
+        app:layout_constraintTop_toBottomOf="@id/header"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:textColor="#8D8E8D"
+
+        android:layout_marginTop="50dp"
+        />
+
+    <TextView
+        android:id="@+id/bmi_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="23.6"
+
+        app:layout_constraintTop_toBottomOf="@id/bmiScoreHead"
+        app:layout_constraintStart_toStartOf="@id/bmiScoreHead"
+        app:layout_constraintEnd_toEndOf="@id/bmiScoreHead"
+        android:textSize="80sp"
+        android:textStyle="bold"
+        android:textColor="#087112"
+        />
+
+    <TextView
+        android:id="@+id/bmiInLevel"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Underweight"
+        android:textAlignment="center"
+        app:layout_constraintTop_toBottomOf="@id/bmi_value"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+       android:singleLine="true"
+        android:textSize="30sp"
+        android:textColor="#087112"
+        android:fontFamily="sans-serif"
+        />
+
+    <TextView
+        android:id="@+id/genderResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Gender           Male"
+        android:layout_marginTop="30dp"
+        app:layout_constraintTop_toBottomOf="@id/bmiInLevel"
+        app:layout_constraintStart_toStartOf="@id/bmiInLevel"
+        app:layout_constraintEnd_toEndOf="@id/bmiInLevel"
+        android:textColor="#8B8787"
+        android:textSize="20sp"
+        />
+
+    <TextView
+        android:id="@+id/ageResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Age           32"
+        app:layout_constraintTop_toBottomOf="@id/genderResult"
+        app:layout_constraintStart_toStartOf="@id/genderResult"
+        app:layout_constraintEnd_toEndOf="@id/genderResult"
+        android:textColor="#8B8787"
+        android:textSize="20sp"
+        />
+    <TextView
+        android:id="@+id/heightResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Height           172.69 m"
+        android:layout_marginTop="10dp"
+
+        app:layout_constraintTop_toBottomOf="@id/ageResult"
+        app:layout_constraintStart_toStartOf="@id/ageResult"
+        app:layout_constraintEnd_toEndOf="@id/ageResult"
+        android:textColor="#8B8787"
+        android:textSize="20sp"
+        />
+
+    <TextView
+        android:id="@+id/weightResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Weight           158 lbs"
+        android:layout_marginTop="10dp"
+
+        app:layout_constraintTop_toBottomOf="@id/heightResult"
+        app:layout_constraintStart_toStartOf="@id/heightResult"
+        app:layout_constraintEnd_toEndOf="@id/heightResult"
+        android:textColor="#8B8787"
+        android:textSize="20sp"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
