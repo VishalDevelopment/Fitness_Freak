@@ -26,8 +26,7 @@ class resultActivity : AppCompatActivity() {
         var click = intent.getStringExtra("click")
 
         binding.backBtn.setOnClickListener{
-            val intent = Intent(this,MainActivity::class.java)
-            startActivity(intent)
+           super.onBackPressed()
             finish()
         }
 
@@ -47,22 +46,22 @@ class resultActivity : AppCompatActivity() {
                 else -> binding.bmiInLevel.text ="Obesity"
             }
             if (bmiLevel<18.5){
-                binding.bmiInLevel.setTextColor(Color.parseColor("#FFFF00"))
-                binding.bmiValue.setTextColor(Color.parseColor("#FFFF00"))
+                binding.bmiInLevel.setTextColor(Color.parseColor("#E1CF03"))
+                binding.bmiValue.setTextColor(Color.parseColor("#E1CF03"))
             }
             else if (bmiLevel>=18.5 && bmiLevel<=24.9){
-                binding.bmiInLevel.setTextColor(Color.parseColor("#00FF00"))
-                binding.bmiValue.setTextColor(Color.parseColor("#00FF00"))
+                binding.bmiInLevel.setTextColor(Color.parseColor("#087112"))
+                binding.bmiValue.setTextColor(Color.parseColor("#087112"))
 
             }
             else if (bmiLevel>=25 && bmiLevel <=29.9){
-                binding.bmiInLevel.setTextColor(Color.parseColor("#FFA500"))
-                binding.bmiValue.setTextColor(Color.parseColor("#FFA500"))
+                binding.bmiInLevel.setTextColor(Color.parseColor("#FF3700"))
+                binding.bmiValue.setTextColor(Color.parseColor("#FF3700"))
 
             }
             else if(bmiLevel>=30.0){
-                binding.bmiInLevel.setTextColor(Color.parseColor("#FF0000"))
-                binding.bmiValue.setTextColor(Color.parseColor("#FF0000"))
+                binding.bmiInLevel.setTextColor(Color.parseColor("#FC0A01"))
+                binding.bmiValue.setTextColor(Color.parseColor("#FC0A01"))
 
             }
 
@@ -85,7 +84,7 @@ class resultActivity : AppCompatActivity() {
             binding.genderResult.text = "Gender           Female"
             binding.ageResult.text = "Age           $age"
             binding.heightResult.text = "Height           $height m"
-            binding.weightResult.text ="Weight           $weight lbs"
+            binding.weightResult.text ="Weight           $weight kg"
         }
 
     }

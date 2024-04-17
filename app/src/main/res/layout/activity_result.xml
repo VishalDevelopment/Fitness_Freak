@@ -61,7 +61,7 @@
         app:layout_constraintEnd_toEndOf="@id/bmiScoreHead"
         android:textSize="80sp"
         android:textStyle="bold"
-        android:textColor="#087112"
+        android:textColor="#E1CF03"
         />
 
     <TextView

@@ -41,7 +41,7 @@ android {
 dependencies {
 
     implementation(libs.splash.screen)
-
+    implementation(libs.circularImage)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)

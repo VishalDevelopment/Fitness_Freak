@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="350dp"
+    android:layout_height="280dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_gravity="center"
+    app:cardCornerRadius="50dp">
+   <androidx.constraintlayout.widget.ConstraintLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       >
+       <ImageView
+           android:id="@+id/image"
+           android:layout_width="60dp"
+           android:layout_height="60dp"
+           android:src="@drawable/incorrect_icon"
+app:layout_constraintTop_toTopOf="parent"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintEnd_toEndOf="parent"
+           android:layout_marginTop="20dp"
+           />
+
+       <TextView
+           android:id="@+id/text1"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="You aren't Allowed to Leave any Box Blank"
+           app:layout_constraintTop_toBottomOf="@+id/image"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintEnd_toEndOf="parent"
+
+           android:textSize="20sp"
+           android:textAlignment="center"
+           android:layout_margin="20dp"
+           android:layout_marginStart="30dp"
+           android:layout_marginEnd="30dp"
+           android:fontFamily="sans-serif-black"
+           />
+       <TextView
+           android:id="@+id/text2"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="Press Okay To Continue Further"
+           app:layout_constraintTop_toBottomOf="@+id/text1"
+           app:layout_constraintStart_toStartOf="@id/text1"
+           app:layout_constraintEnd_toEndOf="@id/text1"
+           android:textSize="15sp"
+           android:fontFamily="sans-serif-condensed-light"/>
+       <androidx.appcompat.widget.AppCompatButton
+           android:id="@+id/okayBtn"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="Ok"
+           app:layout_constraintTop_toBottomOf="@+id/text2"
+           app:layout_constraintStart_toStartOf="@id/text2"
+           app:layout_constraintEnd_toEndOf="@id/text2"
+           android:background="@drawable/dialogue_btn"
+           android:textColor="@color/white"
+           android:fontFamily="sans-serif"
+           android:textStyle="bold"
+           android:layout_marginTop="15dp"
+           />
+   </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

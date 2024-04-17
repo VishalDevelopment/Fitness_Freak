@@ -3,4 +3,6 @@
     <string name="check_your_fit">Check Your Fit</string>
     <string name="male">Male</string>
     <string name="female">Female</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
 </resources>

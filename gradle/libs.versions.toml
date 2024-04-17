@@ -10,8 +10,11 @@ material = "1.11.0"
 activity = "1.8.2"
 constraintlayout = "2.1.4"
 splashVersion="1.0.1"
+circleImage="3.1.0"
 
 [libraries]
+
+circularImage={module="de.hdodenhof:circleimageview",version.ref="circleImage"}
 splash-screen ={module="androidx.core:core-splashscreen",version.ref="splashVersion"}
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
