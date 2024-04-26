@@ -1,15 +1,10 @@
-package com.example.bmi
+package com.example.bmi.Activities
 
 import android.content.Intent
 import android.os.Bundle
-import android.os.Looper
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import kotlinx.coroutines.delay
-import java.util.logging.Handler
+import com.example.bmi.R
 
 class splashscreen : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -17,7 +12,7 @@ class splashscreen : AppCompatActivity() {
         Thread.sleep(2000)
         installSplashScreen()
         setContentView(R.layout.activity_splashscreen)
-        var intent = Intent(this,MainActivity::class.java)
+        var intent = Intent(this, BaseActivity::class.java)
         startActivity(intent)
         finish()
 

@@ -1,18 +1,26 @@
 [versions]
-agp = "8.3.1"
+agp = "8.3.2"
 kotlin = "1.9.0"
-coreKtx = "1.12.0"
+coreKtx = "1.13.0"
 junit = "4.13.2"
 junitVersion = "1.1.5"
 espressoCore = "3.5.1"
 appcompat = "1.6.1"
 material = "1.11.0"
-activity = "1.8.2"
+activity = "1.9.0"
 constraintlayout = "2.1.4"
 splashVersion="1.0.1"
 circleImage="3.1.0"
 
+roomVersion = "2.6.1"
+ksp = "1.9.20-1.0.14"
+navigationFragmentKtx = "2.7.7"
+navigationUiKtx = "2.7.7"
 [libraries]
+
+room = { module = "androidx.room:room-runtime",version.ref = "roomVersion" }
+room-compiler = {module="androidx.room:room-compiler",version.ref = "roomVersion"}
+room-ktx={module="androidx.room:room-ktx",version.ref="roomVersion"}
 
 circularImage={module="de.hdodenhof:circleimageview",version.ref="circleImage"}
 splash-screen ={module="androidx.core:core-splashscreen",version.ref="splashVersion"}
@@ -24,8 +32,13 @@ androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+androidx-navigation-fragment-ktx = { group = "androidx.navigation", name = "navigation-fragment-ktx", version.ref = "navigationFragmentKtx" }
+androidx-navigation-ui-ktx = { group = "androidx.navigation", name = "navigation-ui-ktx", version.ref = "navigationUiKtx" }
 
 [plugins]
+
+ksp = {id ="com.google.devtools.ksp",version.ref="ksp"}
+
 androidApplication = { id = "com.android.application", version.ref = "agp" }
 jetbrainsKotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 
