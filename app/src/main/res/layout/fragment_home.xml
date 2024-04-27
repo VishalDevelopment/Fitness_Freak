@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Fragments.HomeFragment">
+
+    <ImageView
+        android:id="@+id/man_logo"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+
+        android:layout_marginTop="50dp"
+        android:src="@drawable/man"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/woman_logo"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/woman"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/centerOfApp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/male_btn"
+        android:layout_width="160dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/btn_shape"
+        android:text="@string/male"
+        app:layout_constraintEnd_toStartOf="@id/centerOfApp"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/man_logo"
+
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/female_btn"
+        android:layout_width="160dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/btn_shape"
+        android:text="@string/female"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintStart_toEndOf="@id/centerOfApp"
+        app:layout_constraintTop_toBottomOf="@id/man_logo"
+
+        />
+
+
+    <EditText
+        android:id="@+id/age_input"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/inputbtn"
+        android:hint="Age"
+        android:inputType="number"
+        android:paddingStart="20dp"
+        android:singleLine="true"
+        android:textColorHint="#AAA8A8"
+        app:layout_constraintEnd_toEndOf="@id/female_btn"
+        app:layout_constraintStart_toStartOf="@id/male_btn"
+        app:layout_constraintTop_toBottomOf="@id/male_btn"
+
+        />
+
+    <EditText
+        android:id="@+id/height_input"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/inputbtn"
+        android:digits="0123456789.,"
+        android:hint="Height"
+        android:inputType="number"
+        android:paddingStart="20dp"
+        android:singleLine="true"
+        android:textColorHint="#AAA8A8"
+        app:layout_constraintEnd_toEndOf="@id/age_input"
+        app:layout_constraintStart_toStartOf="@id/age_input"
+        app:layout_constraintTop_toBottomOf="@id/age_input"
+
+        />
+
+    <EditText
+        android:id="@+id/weight_input"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/inputbtn"
+        android:digits="0123456789.,"
+        android:hint="Weight"
+        android:inputType="number"
+        android:paddingStart="20dp"
+        android:singleLine="true"
+        android:textColorHint="#AAA8A8"
+        app:layout_constraintEnd_toEndOf="@id/height_input"
+        app:layout_constraintStart_toStartOf="@id/height_input"
+        app:layout_constraintTop_toBottomOf="@id/height_input"
+
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/calculate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="50dp"
+
+        android:background="@drawable/continuebtn"
+        android:text="Continue"
+        android:textColor="@color/white"
+
+        app:layout_constraintEnd_toEndOf="@id/weight_input"
+        app:layout_constraintStart_toStartOf="@id/weight_input"
+        app:layout_constraintTop_toBottomOf="@id/weight_input" />
+
+    <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/profile_image"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_margin="13dp"
+        android:src="@drawable/baseline_account_circle_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

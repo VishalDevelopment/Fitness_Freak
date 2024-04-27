@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="5dp"
+    android:padding="5dp">
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:cardCornerRadius="10dp"
+        android:elevation="3dp"
+        android:layout_margin="5dp"
+        >
+      <androidx.constraintlayout.widget.ConstraintLayout
+          android:layout_width="match_parent"
+          android:layout_height="match_parent">
+          <TextView
+              android:id="@+id/Id_data"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="1"
+              android:textSize="40sp"
+
+              app:layout_constraintTop_toTopOf="parent"
+              app:layout_constraintStart_toStartOf="parent"
+              android:layout_margin="10dp"
+
+              />
+
+          <TextView
+              android:id="@+id/Gender_data"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="Male"
+              android:textSize="30sp"
+              android:fontFamily="sans-serif-condensed-medium"
+              app:layout_constraintTop_toTopOf="parent"
+              app:layout_constraintStart_toStartOf="parent"
+              app:layout_constraintEnd_toEndOf="parent"
+              android:layout_margin="10dp"
+              />
+          <TextView
+              android:id="@+id/Height_data"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="1.7 m"
+              android:textSize="30sp"
+              android:fontFamily="sans-serif-condensed-medium"
+              app:layout_constraintTop_toBottomOf="@id/Gender_data"
+              app:layout_constraintStart_toStartOf="@id/Gender_data"
+              app:layout_constraintEnd_toEndOf="@id/Gender_data"
+              android:layout_margin="10dp"
+              />
+          <TextView
+              android:id="@+id/Weight_data"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="74.8kg"
+              android:textSize="30sp"
+              android:fontFamily="sans-serif-condensed-medium"
+              app:layout_constraintTop_toBottomOf="@id/Height_data"
+              app:layout_constraintStart_toStartOf="@id/Height_data"
+              app:layout_constraintEnd_toEndOf="@id/Height_data"
+              android:layout_margin="10dp"
+              />
+      </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
