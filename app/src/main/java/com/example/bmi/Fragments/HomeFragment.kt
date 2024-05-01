@@ -56,16 +56,6 @@ class HomeFragment : Fragment() {
             } else {
                 Toast.makeText(context, "Blank Fills are not allowed", Toast.LENGTH_SHORT).show()
 
-//                dialog = Dialog(this)
-//                dialog.setContentView(R.layout.custom_dialogue)
-////                dialog.window?.setBackgroundDrawable(getDrawable(R.drawable.background))
-//                dialog.show()
-//                var okayBtn = dialog.findViewById<Button>(R.id.okayBtn)
-//
-//                okayBtn.setOnClickListener {
-//                    dialog.dismiss()
-//                }
-
             }
         }
 

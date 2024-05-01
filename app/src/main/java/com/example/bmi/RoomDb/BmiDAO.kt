@@ -10,13 +10,9 @@ import androidx.room.Update
 @Dao
 interface BmiDAO {
     @Insert
-    suspend  fun insertData(bmiTable: BmiTable)
-    @Update
-    suspend  fun updateData(bmiTable: BmiTable)
-    @Delete
-suspend    fun deleteData(bmiTable: BmiTable)
+   suspend fun insertData(bmiTable: BmiTable)
 
-    @Query("Select * from bmiData")
- suspend   fun getAllData():List<BmiTable>
+    @Query("Select * from bmitable")
+  fun getAllData():List<BmiTable>
 
 }

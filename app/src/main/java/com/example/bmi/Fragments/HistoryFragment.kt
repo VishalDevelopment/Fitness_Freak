@@ -19,11 +19,13 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import kotlin.coroutines.CoroutineContext
+import kotlin.coroutines.coroutineContext
 
 class HistoryFragment : Fragment() {
 lateinit var binding: FragmentHistoryBinding
 lateinit var db:BmiDatabase
-lateinit var dataList: ArrayList<BmiTable>
+lateinit var dataList: List<BmiTable>
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -35,23 +37,14 @@ lateinit var dataList: ArrayList<BmiTable>
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        db= BmiDatabase.getDatabase(requireContext())
 
-        db = BmiDatabase.getDao(requireContext().applicationContext)
 
-//        GlobalScope.launch{
-//            dataList = db.BmiDao().getAllData()
-//        }
-        dataList = arrayListOf()
-        dataList.add(BmiTable(0,"male","1.7","70.4"))
-        dataList.add(BmiTable(1,"male","1.7","70.4"))
-        dataList.add(BmiTable(2,"male","1.7","70.4"))
-        dataList.add(BmiTable(3,"male","1.7","70.4"))
-        dataList.add(BmiTable(4,"male","1.7","70.4"))
-        dataList.add(BmiTable(5,"male","1.7","70.4"))
+         dataList = db.BmiDao().getAllData()
 
 
         binding.recyclerView.adapter = BmiAdapter(requireContext().applicationContext , dataList)
-
+        binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
     }
 }

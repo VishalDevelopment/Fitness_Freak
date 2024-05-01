@@ -10,13 +10,13 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.bmi.R
 import com.example.bmi.RoomDb.BmiTable
 
-class BmiAdapter(var context: Context , var dataList: ArrayList<BmiTable>):RecyclerView.Adapter<BmiAdapter.ViewHolder>() {
+class BmiAdapter(var context: Context , var dataList: List<BmiTable>):RecyclerView.Adapter<BmiAdapter.ViewHolder>() {
   inner  class ViewHolder(itemView:View):RecyclerView.ViewHolder(itemView) {
       var  id = itemView.findViewById<TextView>(R.id.Id_data)
       var gender = itemView.findViewById<TextView>(R.id.Gender_data)
       var height = itemView.findViewById<TextView>(R.id.Height_data)
       var weight = itemView.findViewById<TextView>(R.id.Weight_data)
-
+      var date = itemView.findViewById<TextView>(R.id.Date)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -33,5 +33,6 @@ class BmiAdapter(var context: Context , var dataList: ArrayList<BmiTable>):Recyc
         holder.gender.text =dataList[position].gender
         holder.height.text = dataList[position].height
         holder.weight.text = dataList[position].weight
+        holder.date.text = dataList[position].date.toString()
     }
 }

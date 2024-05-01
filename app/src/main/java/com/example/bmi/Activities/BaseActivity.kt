@@ -45,6 +45,7 @@ class BaseActivity : AppCompatActivity() {
                 R.id.share -> Toast.makeText(this, "Share Clicked", Toast.LENGTH_SHORT).show()
                 R.id.settings -> Toast.makeText(this, "Settings Clicked", Toast.LENGTH_SHORT).show()
             }
+            binding.drawerLayout.closeDrawer(GravityCompat.START)
             true
         }
     }

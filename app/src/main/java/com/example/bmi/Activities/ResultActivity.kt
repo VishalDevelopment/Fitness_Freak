@@ -8,21 +8,26 @@ import androidx.room.Room
 import com.example.bmi.RoomDb.BmiDatabase
 import com.example.bmi.RoomDb.BmiTable
 import com.example.bmi.databinding.ActivityResultBinding
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
+import java.text.DateFormat
+import java.util.Calendar
+import java.util.Date
 
 class resultActivity : AppCompatActivity() {
     lateinit var binding: ActivityResultBinding
     lateinit var db: BmiDatabase
 
-    @SuppressLint("SetTextI18n")
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         binding = ActivityResultBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        db = Room.databaseBuilder(this, BmiDatabase::class.java, "BmiDatabase").build()
+        db = BmiDatabase.getDatabase(this)
 
         var age = intent.getStringExtra("age")
         var height =
@@ -67,10 +72,13 @@ class resultActivity : AppCompatActivity() {
 
             }
 
-            //Database
-            GlobalScope.launch {
-                db.BmiDao().insertData(BmiTable(0, "Male", "$height", "$weight"))
+//            Database
+
+            CoroutineScope(Dispatchers.IO).launch {
+          db.BmiDao().insertData(BmiTable("Male", "$height", "$weight",Date()))
             }
+
+
             binding.genderResult.text = "Gender           Male"
             binding.ageResult.text = "Age           $age"
             binding.heightResult.text = "Height           $height cm"
@@ -87,18 +95,22 @@ class resultActivity : AppCompatActivity() {
                 else -> binding.bmiInLevel.text = "Obesity"
             }
 
-            //Database
-            GlobalScope.launch {
-                db.BmiDao().insertData(BmiTable(0, "Female", "$height", "$weight"))
+//            //Database
+
+//            val calender = Calendar.getInstance()
+//            val dateFormat = DateFormat.getDateInstance(DateFormat.FULL).format(calender)
+
+            CoroutineScope(Dispatchers.IO).launch {
+
+                db.BmiDao().insertData(BmiTable("Female", "$height", "$weight", Date()))
             }
+
 
             binding.genderResult.text = "Gender           Female"
             binding.ageResult.text = "Age           $age"
             binding.heightResult.text = "Height           $height m"
             binding.weightResult.text = "Weight           $weight kg"
+
         }
-
-//        println(db.BmiDao().getAllData())
-
     }
 }
