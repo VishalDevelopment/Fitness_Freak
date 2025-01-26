@@ -15,6 +15,7 @@ class HomeFragment : Fragment() {
     lateinit var binding: FragmentHomeBinding
     lateinit var dialog: Dialog
     var click = 0
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -29,52 +30,52 @@ class HomeFragment : Fragment() {
 
         LogoShow()
         inputData()
-
     }
-    private fun inputData() {
 
+    private fun inputData() {
         val age = binding.ageInput.text
         val height = binding.heightInput.text
         val weight = binding.weightInput.text
 
         binding.calculate.setOnClickListener {
-            if (age.isNotBlank()&& height.isNotBlank() && weight.isNotBlank()) {
+            if (age.isNotBlank() && height.isNotBlank() && weight.isNotBlank()) {
 
-                var intent = Intent(context, resultActivity::class.java)
-                intent.putExtra("click",click.toString())
+                // Validate height and convert if needed (from cm to meters)
+                val heightInMeters = height.toString().toDouble() / 100.00
+
+
+
+                // Prepare the intent and pass the data
+                val intent = Intent(context, resultActivity::class.java)
+                intent.putExtra("click", click.toString())
                 intent.putExtra("age", age.toString())
-                intent.putExtra("height", height.toString())
+                intent.putExtra("height", heightInMeters.toString())  // Pass height in meters
                 intent.putExtra("weight", weight.toString())
+
                 if (context != null) {
                     context?.startActivity(intent)
                 } else {
-                    // Handle the case where context is null (e.g., log an error)
+                    // Handle the case where context is null
                     Toast.makeText(context, "Context is null, cannot launch ResultActivity", Toast.LENGTH_SHORT).show()
                 }
 
-
             } else {
-                Toast.makeText(context, "Blank Fills are not allowed", Toast.LENGTH_SHORT).show()
-
+                Toast.makeText(context, "Blank fields are not allowed", Toast.LENGTH_SHORT).show()
             }
         }
-
     }
+
     private fun LogoShow() {
-
-
         binding.femaleBtn.setOnClickListener {
             binding.womanLogo.visibility = View.VISIBLE
             binding.manLogo.visibility = View.INVISIBLE
             click = 1
         }
 
-
         binding.maleBtn.setOnClickListener {
             binding.womanLogo.visibility = View.INVISIBLE
             binding.manLogo.visibility = View.VISIBLE
             click = 0
-
         }
     }
 }

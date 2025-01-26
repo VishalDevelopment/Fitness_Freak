@@ -6,7 +6,7 @@ plugins {
 
 android {
     namespace = "com.example.bmi"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.example.bmi"
@@ -44,6 +44,7 @@ dependencies {
     implementation(libs.room)
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.navigation.ui.ktx)
+    implementation(libs.androidx.media3.common.ktx)
     annotationProcessor(libs.room.compiler)
     implementation(libs.room.ktx)
     ksp(libs.room.compiler)

@@ -11,6 +11,8 @@ data class BmiTable(
     var height:String,
     var weight:String,
     val date:Date,
+    val bmiLevel :String,
     @PrimaryKey(autoGenerate = true)
     var id:Int=0
+
 )
